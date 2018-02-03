@@ -1,0 +1,67 @@
+{
+    "name": "akbarhashmi/secure-php-login-system",
+    "type": "project",
+    "keywords": [
+        "php-project",
+        "login-system",
+        "user-management",
+        "user-registration",
+        "secure-by-default",
+        "secure-coding",
+        "php-security",
+        "libsodium-php",
+        "encrypted-cookies",
+        "php-dispatching",
+        "ext-sodium",
+        "routing",
+        "controllers",
+        "php-di",
+        "php7-2"
+    ],
+    "description": "A fast and secure by default login system.",
+    "homepage": "https://github.com/akbarhashmi/Secure-PHP-Login-System",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akbar Hashmi",
+            "homepage": "https://github.com/akbarhashmi",
+            "email": "me@akbarhashmi.com",
+            "role": "Owner/Developer"
+        },
+        {
+            "name": "Nicholas English",
+            "homepage": "https://github.com/Nenglish7",
+            "email": "nenglish0820@outlook.com",
+            "role": "Contributor/Developer"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "symfony/yaml": "^4",
+        "symfony/console": "^4",
+        "symfony/process": "^4",
+        "paragonie/halite": "^4.3",
+        "paragonie/csp-builder": "2.3",
+        "paragonie/sodium_compat": "*",
+        "psr/container": "*",
+        "psr/log": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Akbarhashmi\\Engine\\": "./src/engine",
+            "Akbarhashmi\\App\\": "./src/app"
+        }
+    },
+    "suggest": {
+        "egulias/email-validator": "Provides strict email validation. This is recommended."
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
