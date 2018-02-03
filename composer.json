@@ -1,0 +1,63 @@
+{
+    "name": "nenglish7/superbcms",
+    "type": "project",
+    "keywords": [
+        "php-project",
+        "login-system",
+        "user-management",
+        "user-registration",
+        "content-management-system",
+        "secure-by-default",
+        "secure-coding",
+        "php-security",
+        "libsodium-php",
+        "encrypted-cookies",
+        "php-dispatching",
+        "ext-sodium",
+        "routing",
+        "controllers",
+        "php-di",
+        "php72"
+    ],
+    "description": "A fast and secure by default content management system.",
+    "homepage": "https://github.com/Nenglish7/SuperBCMS",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicholas English",
+            "homepage": "https://github.com/Nenglish7",
+            "email": "nenglish0820@outlook.com",
+            "role": "Owner/Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "symfony/yaml": "^4",
+        "symfony/console": "^4",
+        "symfony/process": "^4",
+        "paragonie/halite": "^4.3",
+        "paragonie/csp-builder": "^2.3",
+        "paragonie/sodium_compat": "*",
+        "psr/container": "*",
+        "psr/log": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nenglish7\\Engine\\": "./engine",
+            "Nenglish7\\App\\": "./app"
+        },
+        "files": ["./server.php"]
+    },
+    "suggest": {
+        "egulias/email-validator": "Provides strict email validation. This is recommended."
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
