@@ -16,8 +16,10 @@
          bootstrap="tests/bootstrap.php">
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory>./src</directory>
+            <directory>./src/app</directory>
+            <directory>./src/engine</directory>
             <exclude>
+                <directory>./libsodium</directory>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
             </exclude>
@@ -26,7 +28,7 @@
     <logging>
         <log type="coverage-clover" target="./build/logs/clover.xml" />
     </logging>
-    <testsuite name="Nenglish7/SuperBCMS Test Suite">
+    <testsuite name="akbarhashmi/secure-php-login-system Test Suite">
         <directory suffix="Test.php">./tests</directory>
     </testsuite>
 </phpunit>
