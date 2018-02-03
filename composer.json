@@ -16,6 +16,8 @@
         "routing",
         "controllers",
         "php-di",
+        "php7-0",
+        "php7-1"
         "php7-2"
     ],
     "description": "A fast and secure by default login system.",
