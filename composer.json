@@ -1,12 +1,11 @@
 {
-    "name": "nenglish7/superbcms",
+    "name": "akbarhashmi/secure-php-login-system",
     "type": "project",
     "keywords": [
         "php-project",
         "login-system",
         "user-management",
         "user-registration",
-        "content-management-system",
         "secure-by-default",
         "secure-coding",
         "php-security",
@@ -17,36 +16,41 @@
         "routing",
         "controllers",
         "php-di",
-        "php72"
+        "php7-2"
     ],
-    "description": "A fast and secure by default content management system.",
-    "homepage": "https://github.com/Nenglish7/SuperBCMS",
+    "description": "A fast and secure by default login system.",
+    "homepage": "https://github.com/akbarhashmi/Secure-PHP-Login-System",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Akbar Hashmi",
+            "homepage": "https://github.com/akbarhashmi",
+            "email": "me@akbarhashmi.com",
+            "role": "Owner/Developer"
+        },
         {
             "name": "Nicholas English",
             "homepage": "https://github.com/Nenglish7",
             "email": "nenglish0820@outlook.com",
-            "role": "Owner/Developer"
+            "role": "Contributor/Developer"
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7",
         "symfony/yaml": "^4",
         "symfony/console": "^4",
         "symfony/process": "^4",
         "paragonie/halite": "^4.3",
-        "paragonie/csp-builder": "^2.3",
+        "paragonie/csp-builder": "2.3",
         "paragonie/sodium_compat": "*",
         "psr/container": "*",
         "psr/log": "*"
     },
     "autoload": {
         "psr-4": {
-            "Nenglish7\\Engine\\": "./engine",
-            "Nenglish7\\App\\": "./app"
-        },
-        "files": ["./server.php"]
+            "Akbarhashmi\\Engine\\": "./src/engine",
+            "Akbarhashmi\\App\\": "./src/app"
+        }
     },
     "suggest": {
         "egulias/email-validator": "Provides strict email validation. This is recommended."
