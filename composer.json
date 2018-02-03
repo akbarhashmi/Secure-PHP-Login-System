@@ -36,11 +36,11 @@
         }
     ],
     "require": {
-        "php": "^7",
-        "symfony/yaml": "^3|^4",
-        "symfony/console": "^3|^4",
-        "symfony/process": "^3|^4",
-        "paragonie/halite": "^3|^4.3",
+        "php": "^7.2",
+        "symfony/yaml": "^4",
+        "symfony/console": "^4",
+        "symfony/process": "^4",
+        "paragonie/halite": "^4.3",
         "paragonie/csp-builder": "2.3",
         "paragonie/sodium_compat": "*",
         "psr/container": "*",
