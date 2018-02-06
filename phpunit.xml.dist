@@ -19,7 +19,6 @@
             <directory>./src/app</directory>
             <directory>./src/engine</directory>
             <exclude>
-                <directory>./libsodium</directory>
                 <directory>./vendor</directory>
                 <directory>./tests</directory>
             </exclude>
