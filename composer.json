@@ -42,7 +42,6 @@
         "symfony/process": "^3|^4",
         "paragonie/halite": "^3|^4",
         "paragonie/csp-builder": "^2",
-        "paragonie/sodium_compat": "*",
         "symfony/polyfill-php72": "*",
         "symfony/polyfill-php71": "*",
         "pimple/pimple": "^3",
