@@ -32,7 +32,7 @@ class Container
      *
      * @return void.
      */
-    public static function setContainer(PimpleContainer $pimpleContaner): void
+    public static function setContainer(PimpleContainer $pimpleContaner)
     {
         // Set the container instance.
         self::$instance = $pimpleContaner;
@@ -63,7 +63,7 @@ class Container
      * 
      * @codeCoverageIgnore
      */
-    public static function clear(): void
+    public static function clear()
     {
         self::$instance = \null;
     }
