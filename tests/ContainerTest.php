@@ -12,7 +12,7 @@ declare(strict_types=1);
  
 namespace Akbarhashmi\Engine;
  
-use Pimple\Container as PimpleXContainer;
+use Pimple\Container as PimpleContainer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -20,14 +20,9 @@ use PHPUnit\Framework\TestCase;
  */
 final class ContainerTest extends TestCase
 {
-    private $testContainer;
-    function __construct()
-    {
-        $this->testContainer = new PimpleXContainer();
-    }
     public function testSetContainer()
     {
-        $this->assertTrue(Container::setContainer($this->testContainer));
+        $this->assertTrue(Container::setContainer(new PimpleContainer));
     }
     public function testGetInstance()
     {
