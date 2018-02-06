@@ -16,9 +16,7 @@
         "routing",
         "controllers",
         "php-di",
-        "php7-0",
-        "php7-1"
-        "php7-2"
+        "php7"
     ],
     "description": "A fast and secure by default login system.",
     "homepage": "https://github.com/akbarhashmi/Secure-PHP-Login-System",
@@ -52,7 +50,8 @@
         "psr-4": {
             "Akbarhashmi\\Engine\\": "./src/engine",
             "Akbarhashmi\\App\\": "./src/app"
-        }
+        },
+        "files": ["./server.php"]
     },
     "suggest": {
         "egulias/email-validator": "Provides strict email validation. This is recommended."
