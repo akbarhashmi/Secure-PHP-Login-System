@@ -32,10 +32,12 @@ class Container
      *
      * @return void.
      */
-    public static function setContainer(PimpleContainer $pimpleContaner)
+    public static function setContainer(PimpleContainer $pimpleContaner): bool
     {
         // Set the container instance.
         self::$instance = $pimpleContaner;
+     
+        return \true;
     }
     
     /**
