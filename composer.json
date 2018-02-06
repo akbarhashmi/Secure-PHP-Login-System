@@ -16,7 +16,7 @@
         "routing",
         "controllers",
         "php-di",
-        "php7",
+        "php7
     ],
     "description": "A fast and secure by default login system.",
     "homepage": "https://github.com/akbarhashmi/Secure-PHP-Login-System",
@@ -43,6 +43,8 @@
         "paragonie/halite": "^3|^4",
         "paragonie/csp-builder": "^2",
         "paragonie/sodium_compat": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php71": "*",
         "psr/container": "*",
         "psr/log": "*"
     },
@@ -50,7 +52,8 @@
         "psr-4": {
             "Akbarhashmi\\Engine\\": "./src/engine",
             "Akbarhashmi\\App\\": "./src/app"
-        }
+        },
+        "files": ["./server.php"]
     },
     "suggest": {
         "egulias/email-validator": "Provides strict email validation. This is recommended."
