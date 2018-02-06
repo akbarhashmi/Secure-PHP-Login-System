@@ -48,12 +48,9 @@ class Container
      *
      * @return object|PimpleContainer Return the container instance.
      */
-    public static function getInstance()
+    public static function getInstance(): PimpleContainer
     {
-        if (!(self::$instance instanceof PimpleContainer))
-        {
-            throw new Exception\InvalidArgumentException('The container is not an instance of the pimple container.');
-        }
+     
         // Get the container.
         return self::$instance;
     }
