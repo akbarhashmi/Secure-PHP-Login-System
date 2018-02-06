@@ -45,6 +45,8 @@
         "paragonie/halite": "^3|^4",
         "paragonie/csp-builder": "2.3",
         "paragonie/sodium_compat": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php71": "*",
         "psr/container": "*",
         "psr/log": "*"
     },
