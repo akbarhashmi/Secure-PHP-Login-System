@@ -16,7 +16,7 @@
         "routing",
         "controllers",
         "php-di",
-        "php7"
+        "php7
     ],
     "description": "A fast and secure by default login system.",
     "homepage": "https://github.com/akbarhashmi/Secure-PHP-Login-System",
@@ -41,7 +41,7 @@
         "symfony/console": "^3|^4",
         "symfony/process": "^3|^4",
         "paragonie/halite": "^3|^4",
-        "paragonie/csp-builder": "2.3",
+        "paragonie/csp-builder": "^2",
         "paragonie/sodium_compat": "*",
         "symfony/polyfill-php72": "*",
         "symfony/polyfill-php71": "*",
