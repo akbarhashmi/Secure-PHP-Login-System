@@ -41,7 +41,6 @@
         "symfony/console": "^3|^4",
         "symfony/process": "^3|^4",
         "paragonie/halite": "^3|^4",
-        "paragonie/csp-builder": "^2",
         "symfony/polyfill-php72": "*",
         "symfony/polyfill-php71": "*",
         "pimple/pimple": "^3",
