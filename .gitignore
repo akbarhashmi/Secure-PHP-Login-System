@@ -1,0 +1,9 @@
+composer.json
+composer.lock
+composer.phar
+/vendor/
+LICENSE
+README.md
+.coveralls.yml
+.travis.yml
+phpunit.xml.dist
