@@ -1,1 +1,8 @@
-
+# register configuration.
+csrf: true
+captcha: true
+max_per_ip: 2
+max_attempts: 20
+auto_login_after: true
+email_confirmation: true
+email_confirmation_key_length: 30
