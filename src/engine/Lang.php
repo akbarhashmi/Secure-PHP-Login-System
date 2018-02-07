@@ -139,7 +139,7 @@ class Lang implements LangInterface
         // No encryption is needed since it is not sensitive data.
         $this->cookie->set(
             [
-                'encrypt' => \false
+                'use_encrypt' => \false
             ]
             'lang',
             $language,
@@ -163,10 +163,16 @@ class Lang implements LangInterface
     public function getLanguage(): string
     {
         // Check the cookie for the language data.
-        if ($this->cookie->get('lang') && $this->validLanguage($this->cookie->get('lang')))
+        if ($this->cookie->get('lang', [
+            'use_decrypt' => \false
+        ]) && $this->validLanguage($this->cookie->get('lang', [
+            'use_decrypt' => \false
+        ])))
         {
             // Return the cookie data.
-            return $this->cookie->get('lang');
+            return $this->cookie->get('lang', [
+                'use_decrypt' => \false
+            ]);
         }
         // Check session data and if it exists return that data else return the default language.
         return $this->session->get('lang', $this->config['engine']['default_language']);
