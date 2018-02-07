@@ -2,3 +2,5 @@
 use_cookies: true
 use_only_cookies: true
 auto_start: true
+strict_handler: true
+encrypt_key: %gen-rand-key%
