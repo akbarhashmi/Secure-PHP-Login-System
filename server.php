@@ -16,6 +16,9 @@ if (!file_exists(SYSTEM_ROOT . '/vendor/autoload.php')) {
     trigger_error('You need to run composer install or else the system will not run.', E_USER_ERROR);
 }
 
+// Just in case require composer.
+require_once SYSTEM_ROOT . '/vendor/autoload.php';
+
 // Load the Engine\App configuration.
 require_once SYSTEM_ROOT . '/load.php';
 
