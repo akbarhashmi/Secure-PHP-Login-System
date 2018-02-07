@@ -33,21 +33,13 @@ foreach ($configFiles as $configFile)
     try
     {
         $contents = Yaml::parseFile(SYSTEM_ROOT . "/config/{$configFile}");
-        
         // Get the config array key.
         $file_data = explode('.', $configFile);
         reset($file_data);
-        
         // Inject the config in the config array.
         $configuration[$file_data[0]] = $contents;
     } catch (ParseException $e)
     {
         printf('Unable to parse the YAML string: %s', $e->getMessage());
     }
-}
-
-// Check the configuration contents.
-if (empty($configuration))
-{
-    trigger_error('No configuration was loaded.');
 }
