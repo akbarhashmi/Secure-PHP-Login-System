@@ -36,7 +36,6 @@ class Container
     {
         // Set the container instance.
         self::$instance = $pimpleContaner;
-     
         return \true;
     }
     
@@ -50,7 +49,6 @@ class Container
      */
     public static function getInstance(): PimpleContainer
     {
-     
         // Get the container.
         return self::$instance;
     }
