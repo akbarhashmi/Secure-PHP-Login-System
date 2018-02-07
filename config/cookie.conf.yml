@@ -1,3 +1,4 @@
+# cookie configuration.
 path: /
 domain: localhost
 secure: false
