@@ -25,6 +25,11 @@ $container = new Pimple\Container();
 // Inject the configuration.
 $container['config'] = $configuration;
 
+$container['validator'] = $container->factory(function ($c)
+{
+    return new Akbarhashmi\Engine\Validator\Handler($c['config']);
+});
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
