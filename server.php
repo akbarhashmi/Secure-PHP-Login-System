@@ -19,7 +19,7 @@ if (!file_exists(SYSTEM_ROOT . '/vendor/autoload.php')) {
 // Load the Engine\App configuration.
 require_once SYSTEM_ROOT . '/load.php';
 
-var_dump($configuration['cookie']['encrypt_key']);
+var_dump($configuration['cookie']['path']);
 
 // Start pimple.
 $container = new Pimple\Container();
