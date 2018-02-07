@@ -14,7 +14,7 @@ namespace Akbarhashmi\Engine;
 
 use ParagonIE\Halite\Cookie as ParagonieCookie;
 use ParagonIE\Halite\Symmetric\EncryptionKey;
-use ParagonIE\Halite\HiddenStrin;
+use ParagonIE\Halite\HiddenString;
 
 /**
  * Cookie.
