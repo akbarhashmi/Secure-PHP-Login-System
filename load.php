@@ -39,7 +39,7 @@ foreach ($configFiles as $configFile)
         reset($file_data);
         
         // Inject the config in the config array.
-        $configuration[$file_data[0]] = $contents
+        $configuration[$file_data[0]] = $contents;
     } catch (ParseException $e)
     {
         printf('Unable to parse the YAML string: %s', $e->getMessage());
