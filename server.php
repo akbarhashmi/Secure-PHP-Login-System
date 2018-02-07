@@ -9,7 +9,6 @@ declare(strict_types=1);
  * @link    <https://github.com/akbarhashmi/Secure-PHP-Login-System> Github repository.
  * @license <https://github.com/akbarhashmi/Secure-PHP-Login-System/blob/master/LICENSE> MIT license.
  */
-
 define('SYSTEM_ROOT', __DIR__);
 
 // Check composer.
@@ -17,8 +16,14 @@ if (!file_exists(SYSTEM_ROOT . '/vendor/autoload.php')) {
     trigger_error('You need to run composer install or else the system will not run.', E_USER_ERROR);
 }
 
+// Load the Engine\App configuration.
+require_once SYSTEM_ROOT . '/load.php';
+
 // Start pimple.
 $container = new Pimple\Container();
+
+// Inject the configuration.
+$container['config'] = $configuration;
 
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
