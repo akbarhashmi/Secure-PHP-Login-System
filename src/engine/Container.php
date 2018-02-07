@@ -36,6 +36,7 @@ class Container
     {
         // Set the container instance.
         self::$instance = $pimpleContaner;
+        // Let the user know that the container was set properly.
         return \true;
     }
     
@@ -53,6 +54,8 @@ class Container
         return self::$instance;
     }
     
+    
+ 
     /**
      * Clear the container cache.
      *
@@ -62,6 +65,7 @@ class Container
      */
     public static function clear()
     {
+        // Clear the container from the cache.
         self::$instance = \null;
     }
     
