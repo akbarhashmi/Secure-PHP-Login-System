@@ -23,7 +23,7 @@ require_once SYSTEM_ROOT . '/load.php';
 $container = new Pimple\Container();
 
 // Inject the configuration.
-$container['config'] = $configuration;
+$container['config'] = $config;
 
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
