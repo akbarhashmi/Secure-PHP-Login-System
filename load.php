@@ -25,7 +25,7 @@ $configFiles = [
 ];
 
 // Temp variable.
-$configuration = [];
+$config = [];
 
 // Load the configuration.
 foreach ($configFiles as $configFile)
@@ -37,7 +37,7 @@ foreach ($configFiles as $configFile)
         $file_data = explode('.', $configFile);
         reset($file_data);
         // Inject the config in the config array.
-        $configuration[$file_data[0]] = $contents;
+        $config[$file_data[0]] = $contents;
     } catch (ParseException $e)
     {
         printf('Unable to parse the YAML string: %s', $e->getMessage());
