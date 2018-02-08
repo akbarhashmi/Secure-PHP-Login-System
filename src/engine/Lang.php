@@ -146,7 +146,7 @@ class Lang implements LangInterface
             $getExpire
         );
         // Add the data to the our session handler.
-        Session::set('lang', $lang);
+        $this->session->set('lang', $lang);
         // Language was switched sucessfully so return true.
         return \true;
     }
