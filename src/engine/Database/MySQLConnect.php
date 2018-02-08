@@ -20,4 +20,5 @@ use PDOException;
  */
 class MySQLConnect extends PDO implements MySQLConnectInterface
 {
+    
 }
