@@ -244,7 +244,7 @@ class Lang implements LangInterface
     private function convertExpireDate(int $yrs)
     {
         // Return the data.
-        return \time() + (60 * 60 * 24 * (365 * $yrs))
+        return \time() + (60 * 60 * 24 * (365 * $yrs));
     }
     
 }
