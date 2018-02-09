@@ -202,8 +202,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
     /**
      * Run a delete query.
      *
-     * IF YOU USE PREPARED STATEMENTS, DON'T FORGET TO UPDATE $bind ARRAY!
-     *
      * @param string $table The name of the table.
      * @param string $where Where should we start binding.
      * @param array  $bind  The bind array data.
