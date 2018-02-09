@@ -56,7 +56,7 @@ interface MySQLConnectInterface
      *
      * @codeCoverageIgnore
      */
-    public function select($sql, array $array = [], $fetchMode = PDO::FETCH_ASSOC): array;
+    public function select(string $sql, array $array = [], $fetchMode = PDO::FETCH_ASSOC): array;
 
     /**
      * Run an insert query.
