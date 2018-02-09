@@ -140,7 +140,7 @@ class Lang implements LangInterface
         $this->cookie->set(
             [
                 'use_encrypt' => \false
-            ]
+            ],
             'lang',
             $language,
             $getExpire
