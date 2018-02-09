@@ -115,7 +115,7 @@ class OracleConnect extends PDO implements OracleConnectInterface
      *
      * @codeCoverageIgnore
      */
-    public function select($sql, array $array = [], $fetchMode = PDO::FETCH_ASSOC): array
+    public function select(string $sql, array $array = [], $fetchMode = PDO::FETCH_ASSOC): array
     {
         // Prepare the sql statement.
         $sth = $this->prepare($sql);
