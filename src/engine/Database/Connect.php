@@ -12,6 +12,9 @@ declare(strict_types=1);
  
 namespace Akbarhashmi\Engine\Database\Driver;
 
+use Akbarhashmi\Engine\InvalidArgumentException;
+use Akbarhashmi\Engine\RuntimeException;
+
 /**
  * Connect.
  */
