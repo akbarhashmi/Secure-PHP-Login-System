@@ -53,7 +53,7 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
             parent::__construct($dns, $username, $password);
             // Set the character set.
             $this->exec('SET CHARACTER SET utf8');
-            // If debug is enabled to on debugging mode.
+            // If debug is enabled turn on debugging mode.
             if ($this->debug)
             {
                 $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
