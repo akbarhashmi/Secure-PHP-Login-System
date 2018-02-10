@@ -10,11 +10,21 @@ declare(strict_types=1);
  * @license <https://github.com/akbarhashmi/Secure-PHP-Login-System/blob/master/LICENSE> MIT license.
  */
  
-namespace Akbarhashmi\Engine\Exception;
+namespace Akbarhashmi\Engine\Database\Driver;
 
 /**
- * ExceptionInterface.
+ * Supported.
  */
-interface ExceptionInterface
+class Supported
 {
+    
+    /**
+     * @var array $supported The list of supported database drivers.
+     */
+    protected $supported = [
+        'mysql',
+        'pgsql',
+        'oracle'
+    ];
+  
 }

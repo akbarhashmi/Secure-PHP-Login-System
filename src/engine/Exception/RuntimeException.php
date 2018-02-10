@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * RuntimeException.
  */
-interface ExceptionInterface
+class RuntimeException extends \RuntimeException implements ExceptionInterface
 {
 }

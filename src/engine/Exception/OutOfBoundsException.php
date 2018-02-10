@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * OutOfBoundsException.
  */
-interface ExceptionInterface
+class OutOfBoundsException extends \OutOfBoundsException implements ExceptionInterface
 {
 }

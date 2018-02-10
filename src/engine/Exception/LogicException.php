@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * LogicException.
  */
-interface ExceptionInterface
+class LogicException extends \LogicException implements ExceptionInterface
 {
 }

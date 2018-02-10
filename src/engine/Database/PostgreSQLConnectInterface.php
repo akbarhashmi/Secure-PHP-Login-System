@@ -10,11 +10,11 @@ declare(strict_types=1);
  * @license <https://github.com/akbarhashmi/Secure-PHP-Login-System/blob/master/LICENSE> MIT license.
  */
  
-namespace Akbarhashmi\Engine\Exception;
-
+namespace Akbarhashmi\Engine\Database;
+   
 /**
- * ExceptionInterface.
+ * PostgreSQLConnectInterface.
  */
-interface ExceptionInterface
+interface PostgreSQLConnectInterface
 {
 }

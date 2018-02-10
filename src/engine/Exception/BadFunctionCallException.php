@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * BadFunctionCallException.
  */
-interface ExceptionInterface
+class BadFunctionCallException extends \BadFunctionCallException implements ExceptionInterface
 {
 }

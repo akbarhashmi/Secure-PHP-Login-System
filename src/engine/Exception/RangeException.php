@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * RangeException.
  */
-interface ExceptionInterface
+class RangeException extends \RangeException implements ExceptionInterface
 {
 }

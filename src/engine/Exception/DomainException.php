@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * DomainException.
  */
-interface ExceptionInterface
+class DomainException extends \DomainException implements ExceptionInterface
 {
 }

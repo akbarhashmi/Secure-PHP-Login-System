@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * LengthException.
  */
-interface ExceptionInterface
+class LengthException extends \LengthException implements ExceptionInterface
 {
 }

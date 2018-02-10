@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Exception;
 
 /**
- * ExceptionInterface.
+ * OverflowException.
  */
-interface ExceptionInterface
+class OverflowException extends \OverflowException implements ExceptionInterface
 {
 }
