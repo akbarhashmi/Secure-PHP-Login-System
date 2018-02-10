@@ -28,6 +28,53 @@ $container = new Pimple\Container();
 // Inject the configuration.
 $container['config'] = $config;
 
+// Create a database connection.
+// Right now only mysql/pgsql/oracle databases are supported.
+$container['db'] = function ($c)
+{
+    if ($c['config']['db']['driver'] == 'mysql')
+    {
+        return new Akbarhashmi\Engine\Database\MySQLConnect(
+            $c['config']['db']['hostname'],
+            $c['config']['db']['port'],
+            $c['config']['db']['database'],
+            $c['config']['db']['username'],
+            $c['config']['db']['password'],
+            $c['config']['db']['debug']
+        );
+    } elseif ($c['config']['db']['driver'] == 'pgsql')
+    {
+        return new Akbarhashmi\Engine\Database\PostgreSQLConnect(
+            $c['config']['db']['hostname'],
+            $c['config']['db']['port'],
+            $c['config']['db']['database'],
+            $c['config']['db']['username'],
+            $c['config']['db']['password'],
+            $c['config']['db']['debug']
+        );
+    } elseif ($c['config']['db']['driver'] == 'oracle')
+    {
+        return new Akbarhashmi\Engine\Database\OracleConnect(
+            $c['config']['db']['hostname'],
+            $c['config']['db']['port'],
+            $c['config']['db']['database'],
+            $c['config']['db']['username'],
+            $c['config']['db']['password'],
+            $c['config']['db']['instant_client']
+            $c['config']['db']['debug']
+        );
+    } else
+    {
+        die('Database driver is not supported.');
+    }
+};
+
+// Inject the cookie handler.
+$container['cookie'] = $container->factory(function ($c)
+{
+    return new Akbarhashmi\Engine\Cookie($c['config']);
+});
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
