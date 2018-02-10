@@ -1,8 +1,8 @@
 # database configuration.
-driver=mysql
-hostname=localhost
-username=root
-password=
-database=test
-port=3306
-debug=false
+driver: mysql
+hostname: localhost
+username: root
+password:
+database: test
+port: 3306
+debug: false
