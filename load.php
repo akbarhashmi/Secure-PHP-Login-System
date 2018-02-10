@@ -21,7 +21,8 @@ $configFiles = [
     'other.conf.yml',
     'register.conf.yml',
     'security.conf.yml',
-    'session.conf.yml'
+    'session.conf.yml',
+    'db.conf.yml'
 ];
 
 // Temp variable.
