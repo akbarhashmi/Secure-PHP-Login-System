@@ -3,4 +3,4 @@ path: /
 domain: localhost
 secure: false
 http_only: true
-encrypt_key: %gen-rand-key%
+secret_key: BPCyfPEAynzpsE2J
