@@ -12,10 +12,6 @@ declare(strict_types=1);
  
 namespace Akbarhashmi\Engine;
 
-use ParagonIE\Halite\Cookie as ParagonieCookie;
-use ParagonIE\Halite\Symmetric\EncryptionKey;
-use ParagonIE\Halite\HiddenStrin;
-
 /**
  * CookieInterface.
  *
