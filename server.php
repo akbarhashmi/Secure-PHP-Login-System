@@ -60,7 +60,7 @@ $container['db'] = function ($c)
             $c['config']['db']['database'],
             $c['config']['db']['username'],
             $c['config']['db']['password'],
-            $c['config']['db']['instant_client']
+            $c['config']['db']['instant_client'],
             $c['config']['db']['debug']
         );
     } else
