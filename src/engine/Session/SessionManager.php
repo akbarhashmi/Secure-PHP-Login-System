@@ -32,7 +32,7 @@ class SessionManager implements SessionManagerInterface
      */
     function __construct(array $config)
     {
-        $this->config = $config
+        $this->config = $config;
     }
     
     /**
