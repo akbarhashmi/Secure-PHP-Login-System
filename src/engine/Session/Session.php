@@ -16,6 +16,8 @@ use Akbarhashmi\Engine\Exception\RuntimeException;
 
 /**
  * Session.
+ *
+ * @codeCoverageIgnore
  */
 class Session extends SessionManager implements SessionInterface
 {
