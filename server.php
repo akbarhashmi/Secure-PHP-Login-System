@@ -75,6 +75,12 @@ $container['cookie'] = $container->factory(function ($c)
     return new Akbarhashmi\Engine\Cookie($c['config']);
 });
 
+// Inject the session handler.
+$container['session'] = $container->factory(function ($c)
+{
+    return new Akbarhashmi\Engine\Session\Session($c['config']);
+});
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
