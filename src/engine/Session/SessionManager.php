@@ -80,7 +80,7 @@ class SessionManager implements SessionManagerInterface
      */
     public static function regenerate($deleteOldSession = true)
     {
-        return session_regenerate_id($deleteOldSession);
+        return \session_regenerate_id($deleteOldSession);
     }
     
     /**
