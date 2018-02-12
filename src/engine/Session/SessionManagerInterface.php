@@ -13,15 +13,10 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine\Session;
 
 /**
- * SessionManager.
+ * SessionManagerInterface.
  */
-class SessionManager implements SessionManagerInterface
+interface SessionManagerInterface
 {
-    
-    /**
-     * @var array $config The config array.
-     */
-    private $config;
     
     /**
      * Set the config array.
