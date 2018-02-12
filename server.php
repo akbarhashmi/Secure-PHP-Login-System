@@ -81,6 +81,16 @@ $container['session'] = $container->factory(function ($c)
     return new Akbarhashmi\Engine\Session\Session($c['config']);
 });
 
+// Inject the language switcher.
+$container['lang'] = $container->factory(function ($c)
+{
+    return new Akbarhashmi\Engine\Session\Session(
+        $c['config'],
+        $c['session'],
+        $c['cookie']
+    );
+});
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
