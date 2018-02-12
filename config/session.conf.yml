@@ -1,6 +1,7 @@
 # session configuration
+name: akbarhashmi
 use_cookies: true
 use_only_cookies: true
 auto_start: true
-strict_handler: true
+use_strict_mode: true
 encrypt_key: urparMpF39Yg6wVY
