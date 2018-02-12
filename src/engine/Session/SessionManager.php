@@ -66,6 +66,8 @@ class SessionManager implements SessionManagerInterface
             // Destory the session.
             $this->destroySession();
         }
+        // Return true.
+        return \true;
     }
     
     /**
