@@ -35,6 +35,11 @@ class SessionManager implements SessionManagerInterface
         $this->config = $config
     }
     
+    /**
+     * Start a secure php session.
+     *
+     * @return bool Return TRUE if a session is now running.
+     */
     public function start(): bool
     {
         // Check to see if a session is already running.
