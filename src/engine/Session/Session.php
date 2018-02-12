@@ -21,6 +21,16 @@ class Session extends SessionManager implements SessionInterface
 {
     
     /**
+     * Pass the config array to the manager.
+     *
+     * @return void.
+     */
+    function __construct(array $config)
+    {
+        parent::__construct($config);
+    }
+ 
+    /**
      * Set a session variable.
      *
      * @param string $name  The session variable name.
