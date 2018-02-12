@@ -14,6 +14,8 @@ namespace Akbarhashmi\Engine\Session;
 
 /**
  * SessionManager.
+ *
+ * @codeCoverageIgnore
  */
 class SessionManager implements SessionManagerInterface
 {
