@@ -13,10 +13,25 @@ declare(strict_types=1);
 namespace Akbarhashmi\Engine;
  
 /**
- * LangInterface.
+ * Lang.
  */
-interface LangInterface
+class Lang implements LangInterface
 {
+    
+    /**
+     * @var array|[] $config The config array to be used.
+     */
+    private $config = [];
+    
+    /**
+     * @var object|Session $session The session handler class.
+     */
+    private $session;
+    
+    /**
+     * @var object|Cookie $cookie The cookie handler.
+     */
+    private $cookie;
     
     /**
      * Get the configuration for the engine and inject the session
@@ -30,7 +45,15 @@ interface LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie);
+    function __construct(array $config, Session $handler, Cookie $cookie)
+    {
+        // Set the configuration array.
+        $this->config = $config;
+        // Bind the session handler to a private variable.
+        $this->session = $handler;
+        // Bind the cookie handler to a private variable.
+        $this->cookie = $cookie;
+    }
   
     /**
      * Get all the translations of a language.
@@ -60,8 +83,6 @@ interface LangInterface
      *
      * @return bool Returns TRUE if the language was changed properly and
      *              return FALSE if it was not changed properly.
-     *
-     * @codeCoverageIgnore
      */
     public function setLanguage($language): bool;
 
@@ -71,10 +92,17 @@ interface LangInterface
      * @return string Returns the current language and if there is no
      *                language data it will return the default english
      *                language.
-     *
-     * @codeCoverageIgnore
      */
     public function getLanguage(): string;
+    
+    /**
+     * Convert the number of years to cookie format.
+     *
+     * @param int $yrs The number of years.
+     *
+     * @return int The converted number of years.
+     */
+    public function convertExpireDate(int $yrs);
     
 }
 
