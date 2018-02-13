@@ -14,6 +14,8 @@ namespace Akbarhashmi\Engine;
  
 /**
  * Lang.
+ *
+ * @codeCoverageIgnore
  */
 class Lang implements LangInterface
 {
