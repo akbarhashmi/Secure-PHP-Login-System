@@ -52,7 +52,7 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
             // Throw an error.
             throw new InvalidArgumentException(\sprintf(
                 'The port argument is not a valid data type. Allowed: `string, int`. Passed: `%s`.',
-                \gettype($port);
+                \gettype($port)
             ));
         }    
         // Set the debugging mode.
