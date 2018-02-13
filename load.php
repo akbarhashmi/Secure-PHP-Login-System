@@ -16,7 +16,7 @@ use Symfony\Component\Yaml\Exception\ParseException;
 // List the configuration files.
 $configFiles = [
     'cookie.conf.yml',
-    'lang.conf.yml'
+    'lang.conf.yml',
     'login.conf.yml',
     'oauth.conf.yml',
     'other.conf.yml',
