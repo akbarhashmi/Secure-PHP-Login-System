@@ -132,7 +132,7 @@ class Lang implements LangInterface
         }
         // Convert the config lang time length to cookie expire format.
         // The convertor will assume that the numbers are referring to years.
-        $getExpire = $this->convertExpireDate($this->config['engine']['default_language_time_length']);
+        $getExpire = $this->convertExpireDate((int) $this->config['engine']['default_language_time_length']);
         // Set the browser to remember this language for 1 year.
         // No encryption is needed since it is not sensitive data.
         $this->cookie->set(
