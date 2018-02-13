@@ -85,7 +85,7 @@ class SessionManager implements SessionManagerInterface
      * @return bool Return TRUE if the session id was regenerated and
      *              FALSE if it ws not.
      */
-    public static function regenerate(bool $deleteOldSession = true): bool
+    public static function regenerate(bool $deleteOldSession = \true): bool
     {
         return \session_regenerate_id($deleteOldSession);
     }
