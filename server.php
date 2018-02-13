@@ -92,6 +92,13 @@ if ((bool) $container['config']['session']['auto_start'] === true)
     $container['session']->start();   
 }
 
+// Set the language if requested.
+if (isset($_GET['lang']))
+{
+    // Set the new language.
+    $container['lang']->setLanguage($_GET['lang']);
+}
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
