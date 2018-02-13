@@ -5,5 +5,4 @@ username: root
 password:
 database: test
 port: 3306
-instant_client:
 debug: false
