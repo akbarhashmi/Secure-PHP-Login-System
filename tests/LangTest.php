@@ -41,7 +41,7 @@ final class LangTest extends TestCase
         });
         $container['lang'] = $container->factory(function ($c)
         {
-            return new Akbarhashmi\Engine\Session\Session(
+            return new Session\Session(
                 $c['config'],
                 $c['session'],
                 $c['cookie']
