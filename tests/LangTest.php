@@ -24,12 +24,25 @@ final class LangTest extends TestCase
     {
         $container = new PimpleContainer();
         $container['config'] = [
-            'name' => 'akbarhashmiSession',
-            'auto_start' => true,
-            'use_cookies' => true,
-            'use_only_cookies' => true,
-            'use_strict_mode' => true,
-            'expire_seconds' => 1800
+            'session' => [
+                'name' => 'akbarhashmiSession',
+                'auto_start' => false,
+                'use_cookies' => \true,
+                'use_only_cookies' => \true,
+                'use_strict_mode' => \true,
+                'expire_seconds' => 1800
+            ],
+            'cookie' => [
+                'path' => '/',
+                'domain' => '',
+                'secure' => '',
+                'http_only' => '',
+                'secret_key' => 'BPCyfPEAynzpsE2J'
+            ],
+            'lang' => [
+                'default_language' => 'en',
+                'default_language_time_length' => 1
+            ]
         ];
         $container['session'] = $container->factory(function ($c)
         {
@@ -48,7 +61,7 @@ final class LangTest extends TestCase
             );
         });
         $this->assertEquals($container['lang']->convertExpireDate(2), \time() + (60 * 60 * 24 * (365 * 2)));
-        $this->assertEquals($container['lang']->all(true), \json_encode(include(SYSTEM_ROOT . '/langs/en.php')));
-        $this->assertEquals($container['lang']->all(false), include(SYSTEM_ROOT . '/langs/en.php'));
+        $this->assertEquals($container['lang']->all(\true), \json_encode(include(\SYSTEM_ROOT . '/langs/en.php')));
+        $this->assertEquals($container['lang']->all(\false), include(\SYSTEM_ROOT . '/langs/en.php'));
     }
 }
