@@ -99,6 +99,11 @@ if (isset($_GET['lang']))
     $container['lang']->setLanguage($_GET['lang']);
 }
 
+$container['validator'] = $container->factory(function ($c)
+{
+    return new Akbarhashmi\Engine\Validator\Handler($c['config']);
+});
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
