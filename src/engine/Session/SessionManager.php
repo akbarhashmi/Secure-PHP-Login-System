@@ -54,9 +54,9 @@ class SessionManager implements SessionManagerInterface
         \session_name((string) $this->config['session']['name']);
         // Set security guards.
         // This makes it harder for attackers. 
-        \ini_set('session.use_cookies', $this->config['session']['use_cookies']); // Recommended.
-        \ini_set('session.use_only_cookies', $this->config['session']['use_only_cookies']); // Recommended.
-        \ini_set('session.use_strict_mode', $this->config['session']['use_strict_mode']); // Recommended.
+        \ini_set('session.use_cookies', (string) $this->config['session']['use_cookies']); // Recommended.
+        \ini_set('session.use_only_cookies', (string) $this->config['session']['use_only_cookies']); // Recommended.
+        \ini_set('session.use_strict_mode', (string) $this->config['session']['use_strict_mode']); // Recommended.
         // Set the cookie params for the session.
         \session_set_cookie_params(
             0, // Should always be 0 to prevent bugs/issues.
