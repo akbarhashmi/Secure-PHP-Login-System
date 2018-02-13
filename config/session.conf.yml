@@ -4,3 +4,4 @@ auto_start: true
 use_cookies: true
 use_only_cookies: true
 use_strict_mode: true
+expire_seconds: 1800
