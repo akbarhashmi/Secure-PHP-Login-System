@@ -30,7 +30,7 @@ interface LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie);
+    function __construct(array $config, Session\Session $handler, Cookie $cookie);
   
     /**
      * Get all the translations of a language.
@@ -60,8 +60,6 @@ interface LangInterface
      *
      * @return bool Returns TRUE if the language was changed properly and
      *              return FALSE if it was not changed properly.
-     *
-     * @codeCoverageIgnore
      */
     public function setLanguage($language): bool;
 
@@ -71,10 +69,17 @@ interface LangInterface
      * @return string Returns the current language and if there is no
      *                language data it will return the default english
      *                language.
-     *
-     * @codeCoverageIgnore
      */
     public function getLanguage(): string;
+    
+    /**
+     * Convert the number of years to cookie format.
+     *
+     * @param int $yrs The number of years.
+     *
+     * @return int The converted number of years.
+     */
+    public function convertExpireDate(int $yrs);
     
 }
 

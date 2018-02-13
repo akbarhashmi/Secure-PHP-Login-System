@@ -99,7 +99,7 @@ class SessionManager implements SessionManagerInterface
     public function isExpired(): bool
     {
         // Check to see if the session is expired.
-        if (isset($_SESSION['LAST_ACTIVITY']) && (\time - $_SESSION['LAST_ACTIVITY']) > $this->config['session']['expire_seconds'])
+        if (isset($_SESSION['LAST_ACTIVITY']) && (\time - $_SESSION['LAST_ACTIVITY']) > (int) $this->config['session']['expire_seconds'])
         {
             // Return true.
             return \true;

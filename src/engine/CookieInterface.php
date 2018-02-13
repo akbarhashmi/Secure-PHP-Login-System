@@ -39,7 +39,7 @@ interface CookieInterface
      *
      * @return void.
      */
-    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire);
+    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire): void;
     
     /**
      * Fetch a cookie by name.
@@ -63,6 +63,6 @@ interface CookieInterface
      *
      * @return void.
      */
-    public function delete(string $name);
+    public function delete(string $name): void;
     
 }

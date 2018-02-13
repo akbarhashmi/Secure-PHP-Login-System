@@ -37,7 +37,7 @@ interface SessionInterface
      *
      * @return void.
      */
-    public function set(string $name, string $value);
+    public function set(string $name, string $value): void;
     
     /**
      * Get a session variable.
@@ -62,6 +62,6 @@ interface SessionInterface
      *
      * @return void.
      */
-    public function delete(string $name);
+    public function delete(string $name): void;
     
 }

@@ -44,7 +44,7 @@ class Session extends SessionManager implements SessionInterface
      *
      * @return void.
      */
-    public function set(string $name, string $value)
+    public function set(string $name, string $value): void
     {
         // Check to see if a session is running.
         if (!$this->sessionExists())
@@ -95,7 +95,7 @@ class Session extends SessionManager implements SessionInterface
      *
      * @return void.
      */
-    public function delete(string $name)
+    public function delete(string $name): void
     {
         // Check to see if a session is running.
         if (!$this->sessionExists())

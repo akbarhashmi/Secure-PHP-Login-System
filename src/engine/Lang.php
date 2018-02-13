@@ -47,7 +47,7 @@ class Lang implements LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie)
+    function __construct(array $config, Session\Session $handler, Cookie $cookie)
     {
         // Set the configuration array.
         $this->config = $config;
@@ -125,8 +125,6 @@ class Lang implements LangInterface
      *
      * @return bool Returns TRUE if the language was changed properly and
      *              return FALSE if it was not changed properly.
-     *
-     * @codeCoverageIgnore
      */
     public function setLanguage($language): bool
     {
@@ -136,7 +134,7 @@ class Lang implements LangInterface
         }
         // Convert the config lang time length to cookie expire format.
         // The convertor will assume that the numbers are referring to years.
-        $getExpire = $this->convertExpireDate($this->config['engine']['default_language_time_length']);
+        $getExpire = $this->convertExpireDate((int) $this->config['engine']['default_language_time_length']);
         // Set the browser to remember this language for 1 year.
         // No encryption is needed since it is not sensitive data.
         $this->cookie->set(
@@ -159,25 +157,23 @@ class Lang implements LangInterface
      * @return string Returns the current language and if there is no
      *                language data it will return the default english
      *                language.
-     *
-     * @codeCoverageIgnore
      */
     public function getLanguage(): string
     {
         // Check the cookie for the language data.
-        if ($this->cookie->get('lang', [
+        if ($this->cookie->fetch([
             'use_decrypt' => \false
-        ]) && $this->validLanguage($this->cookie->get('lang', [
+        ], 'lang') && $this->validLanguage($this->cookie->fetch([
             'use_decrypt' => \false
-        ])))
+        ], 'lang')))
         {
             // Return the cookie data.
-            return $this->cookie->get('lang', [
+            return $this->cookie->fetch([
                 'use_decrypt' => \false
-            ]);
+            ], 'lang');
         }
         // Check session data and if it exists return that data else return the default language.
-        return $this->session->get('lang', $this->config['engine']['default_language']);
+        return $this->session->get('lang', $this->config['lang']['default_language']);
     }
   
   
@@ -211,8 +207,6 @@ class Lang implements LangInterface
      * @param string $lang The language to get.
      *
      * @return string Return the string location of the language file.
-     *
-     * @codeCoverageIgnore
      */
     private function getFile(string $lang): string
     {
@@ -227,8 +221,6 @@ class Lang implements LangInterface
      *
      * @return bool Return TRUE if the language file is valid and
      *              return FALSE if it is invalid.
-     *
-     * @codeCoverageIgnore
      */
     private function validLanguage($lang): bool
     {
@@ -243,7 +235,7 @@ class Lang implements LangInterface
      *
      * @return int The converted number of years.
      */
-    private function convertExpireDate(int $yrs)
+    public function convertExpireDate(int $yrs)
     {
         // Return the data.
         return \time() + (60 * 60 * 24 * (365 * $yrs));
