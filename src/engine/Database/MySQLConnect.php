@@ -18,6 +18,8 @@ use Akbarhashmi\Engine\Exception\InvalidArgumentException;
 
 /**
  * MySQLConnect.
+ *
+ * @codeCoverageIgnore
  */
 class MySQLConnect extends PDO implements MySQLConnectInterface
 {
@@ -41,8 +43,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      *                                  data type.
      * 
      * @return void.
-     *
-     * @codeCoverageIgnore
      */
     public function __construct(string $hostname = 'localhost', $port = 3306, string $database, string $username, string $password = '', bool $debug = \false)
     {
@@ -87,8 +87,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param string $database The database name.
      *
      * @return string The dns string.
-     *
-     * @codeCoverageIgnore
      */
     private function formulateDns(string $hostname, string $port, string $database)
     {
@@ -102,8 +100,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param bool $debug Is debugging enabled.
      *
      * @return void.
-     *
-     * @codeCoverageIgnore
      */
     public function debug(bool $debug)
     {
@@ -118,8 +114,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param int    $fetchMode int The PDO fetch mode to use.
      *
      * @return array Return the array fetch results.
-     *
-     * @codeCoverageIgnore
      */
     public function select(string $sql, array $array = [], $fetchMode = PDO::FETCH_ASSOC): array
     {
@@ -144,8 +138,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param array  $data  An array of data to insert.
      *
      * @return bool Return TRUE if the statement ran properly.
-     *
-     * @codeCoverageIgnore
      */
     public function insert(string $table, array $data): bool
     {
@@ -177,8 +169,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param array  $whereBindArray Parameters to bind to where part of query.
      *
      * @return bool Return TRUE if the statement ran properly.
-     *
-     * @codeCoverageIgnore
      */
     public function update(string $table, array $data, string $where, array $whereBindArray = []): bool
     {
@@ -223,8 +213,6 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param int    $limit How many rows are allowed to be deleted.
      *
      * @return bool Return TRUE if the statement ran properly.
-     *
-     * @codeCoverageIgnore
      */
     public function delete(string $table, string $where, array $bind = [], int $limit = \null): bool
     {
