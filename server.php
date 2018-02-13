@@ -29,7 +29,6 @@ $container = new Pimple\Container();
 $container['config'] = $config;
 
 // Create a database connection.
-// Right now only mysql/pgsql/oracle databases are supported.
 $container['db'] = function ($c)
 {
     if ($c['config']['db']['driver'] == 'mysql')
@@ -52,19 +51,9 @@ $container['db'] = function ($c)
             $c['config']['db']['password'],
             $c['config']['db']['debug']
         );
-    } elseif ($c['config']['db']['driver'] == 'oracle')
-    {
-        return new Akbarhashmi\Engine\Database\OracleConnect(
-            $c['config']['db']['hostname'],
-            $c['config']['db']['port'],
-            $c['config']['db']['database'],
-            $c['config']['db']['username'],
-            $c['config']['db']['password'],
-            $c['config']['db']['instant_client'],
-            $c['config']['db']['debug']
-        );
     } else
     {
+        // Kill the script if aan invalid driver is passed.
         die('Database driver is not supported.');
     }
 };
@@ -91,14 +80,31 @@ $container['lang'] = $container->factory(function ($c)
     );
 });
 
+// Check to see if the secure session should be auto started.
+if ((bool) $container['config']['session']['auto_start'] === true)
+{
+    // Start a secure session.
+    engine('session')->start();   
+}
+
 // Our container management.
 Akbarhashmi\Engine\Container::setContainer($container);
 function engine($service = null)
 {
+    // Check the service data type
+    if (!is_null($service) && !is_string($service))
+    {
+        // Return null.
+        return null;
+    }
+    // Get the container instance.
     $container = Akbarhashmi\Engine\Container::getInstance();
+    // Check to see if a service is passed.
     if (is_null($service))
     {
+        // Return the engine pimple container.
         return $container;
     }
+    // Return the service.
     return $container[(string) $service];
 }
