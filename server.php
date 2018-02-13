@@ -89,7 +89,7 @@ $container['lang'] = $container->factory(function ($c)
 if ((bool) $container['config']['session']['auto_start'] === true)
 {
     // Start a secure session.
-    engine('session')->start();   
+    $container['session']->start();   
 }
 
 // Our container management.
