@@ -54,7 +54,7 @@ final class LangTest extends TestCase
         });
         $container['lang'] = $container->factory(function ($c)
         {
-            return new Session\Session(
+            return new Lang(
                 $c['config'],
                 $c['session'],
                 $c['cookie']
