@@ -59,7 +59,7 @@
         "egulias/email-validator": "Provides strict email validation. This is recommended."
     },
     "require-dev": {
-        "phpunit/phpunit": "^6"
+        "phpunit/phpunit": "^6|^7"
     },
     "config": {
         "preferred-install": "dist",
