@@ -159,16 +159,16 @@ class Lang implements LangInterface
     public function getLanguage(): string
     {
         // Check the cookie for the language data.
-        if ($this->cookie->fetch('lang', [
+        if ($this->cookie->fetch([
             'use_decrypt' => \false
-        ]) && $this->validLanguage($this->cookie->fetch('lang', [
+        ], 'lang') && $this->validLanguage($this->cookie->fetch([
             'use_decrypt' => \false
-        ])))
+        ], 'lang')))
         {
             // Return the cookie data.
-            return $this->cookie->fetch('lang', [
+            return $this->cookie->fetch([
                 'use_decrypt' => \false
-            ]);
+            ], 'lang');
         }
         // Check session data and if it exists return that data else return the default language.
         return $this->session->get('lang', $this->config['lang']['default_language']);
