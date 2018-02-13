@@ -11,8 +11,6 @@ declare(strict_types=1);
  */
  
 namespace Akbarhashmi\Engine;
-
-use Akbarhashmi\Engine\Session\Session;
  
 /**
  * Lang.
@@ -47,7 +45,7 @@ class Lang implements LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie)
+    function __construct(array $config, Session\Session $handler, Cookie $cookie)
     {
         // Set the configuration array.
         $this->config = $config;
