@@ -15,9 +15,9 @@ namespace Akbarhashmi\Engine;
 use Akbarhashmi\Engine\Session\Session;
  
 /**
- * Lang.
+ * LangInterface.
  */
-class Lang implements LangInterface
+interface LangInterface
 {
     
     /**
