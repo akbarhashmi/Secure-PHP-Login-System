@@ -14,6 +14,7 @@ namespace Akbarhashmi\Engine\Database;
 
 use PDO;
 use PDOException;
+use Akbarhashmi\Engine\Exception\InvalidArgumentException;
 
 /**
  * MySQLConnect.
@@ -35,13 +36,25 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      * @param string $username The database username.
      * @param string $password The database password.
      * @param bool   $debug    Should we run debug.
+     *
+     * @throws InvalidArgumentException If the port argument is an invalid
+     *                                  data type.
      * 
      * @return void.
      *
      * @codeCoverageIgnore
      */
-    public function __construct(string $hostname, string $port, string $database, string $username, string $password, bool $debug)
+    public function __construct(string $hostname = 'localhost', $port = 3306, string $database, string $username, string $password = '', bool $debug = \false)
     {
+        // Check the port data type.
+        if (!\is_int($port) && !\is_string($port))
+        {
+            // Throw an error.
+            throw new InvalidArgumentException(\sprintf(
+                'The port argument is not a valid data type. Allowed: `string, int`. Passed: `%s`.',
+                \gettype($port);
+            ));
+        }    
         // Set the debugging mode.
         $this->debug($debug);
         // Formulate a dns connection string.
@@ -56,6 +69,7 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
             // If debug is enabled turn on debugging mode.
             if ($this->debug)
             {
+                // Set the errmode attribute
                 $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             }
         } catch (PDOException $e)
@@ -78,6 +92,7 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      */
     private function formulateDns(string $hostname, string $port, string $database)
     {
+        // Formulate the dns string for the connection.
         return "mysql:host={$hostname};port={$port};dbname={$database};charset=utf8";
     }
 
@@ -211,7 +226,7 @@ class MySQLConnect extends PDO implements MySQLConnectInterface
      *
      * @codeCoverageIgnore
      */
-    public function delete(string $table, string $where, array $bind = [], int $limit = null): bool
+    public function delete(string $table, string $where, array $bind = [], int $limit = \null): bool
     {
         // Define the query string.
         $query = "DELETE FROM $table WHERE $where";
