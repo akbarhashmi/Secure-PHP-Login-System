@@ -46,7 +46,8 @@
         "symfony/polyfill-php71": "*",
         "pimple/pimple": "^3",
         "psr/container": "*",
-        "psr/log": "*"
+        "psr/log": "*",
+        "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {
