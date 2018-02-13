@@ -36,6 +36,7 @@ $container['db'] = function ($c)
 {
     if ($c['config']['db']['driver'] == 'mysql')
     {
+        // Start a MySQL connection.
         return new Akbarhashmi\Engine\Database\MySQLConnect(
             $c['config']['db']['hostname'],
             $c['config']['db']['port'],
@@ -46,6 +47,7 @@ $container['db'] = function ($c)
         );
     } elseif ($c['config']['db']['driver'] == 'pgsql')
     {
+        // Start a PgSQL connection.
         return new Akbarhashmi\Engine\Database\PostgreSQLConnect(
             $c['config']['db']['hostname'],
             $c['config']['db']['port'],
@@ -56,7 +58,7 @@ $container['db'] = function ($c)
         );
     } else
     {
-        // Kill the script if aan invalid driver is passed.
+        // Kill the script if an invalid driver is passed.
         die('Database driver is not supported.');
     }
 };
