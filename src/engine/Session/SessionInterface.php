@@ -19,6 +19,15 @@ interface SessionInterface
 {
     
     /**
+     * Pass the config array to the manager.
+     *
+     * @param array $config The config array.
+     *
+     * @return void.
+     */
+    function __construct(array $config);
+ 
+    /**
      * Set a session variable.
      *
      * @param string $name  The session variable name.
@@ -42,7 +51,7 @@ interface SessionInterface
      *               it does not exist return the default return value
      *               passed.
      */
-    public function get(string $name, $defaultReturnValue = null);
+    public function get(string $name, $defaultReturnValue = \null);
     
     /**
      * Delete a session variable.
