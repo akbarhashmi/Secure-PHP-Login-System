@@ -25,6 +25,8 @@ class Session extends SessionManager implements SessionInterface
     /**
      * Pass the config array to the manager.
      *
+     * @param array $config The config array.
+     *
      * @return void.
      */
     function __construct(array $config)
@@ -66,7 +68,7 @@ class Session extends SessionManager implements SessionInterface
      *               it does not exist return the default return value
      *               passed.
      */
-    public function get(string $name, $defaultReturnValue = null)
+    public function get(string $name, $defaultReturnValue = \null)
     {
         // Check to see if a session is running.
         if (!$this->sessionExists())
