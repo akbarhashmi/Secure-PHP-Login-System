@@ -41,6 +41,7 @@ foreach ($configFiles as $configFile)
         $config[$file_data[0]] = $contents;
     } catch (ParseException $e)
     {
+        // Stop execution and print an error.
         printf('Unable to parse the YAML string: %s', $e->getMessage());
     }
 }
