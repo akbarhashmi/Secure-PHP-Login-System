@@ -11,27 +11,14 @@ declare(strict_types=1);
  */
  
 namespace Akbarhashmi\Engine;
+
+use Akbarhashmi\Engine\Session\Session;
  
 /**
  * Lang.
  */
 class Lang implements LangInterface
 {
-    
-    /**
-     * @var array|[] $config The config array to be used.
-     */
-    private $config = [];
-    
-    /**
-     * @var object|Session $session The session handler class.
-     */
-    private $session;
-    
-    /**
-     * @var object|Cookie $cookie The cookie handler.
-     */
-    private $cookie;
     
     /**
      * Get the configuration for the engine and inject the session
@@ -45,15 +32,7 @@ class Lang implements LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie)
-    {
-        // Set the configuration array.
-        $this->config = $config;
-        // Bind the session handler to a private variable.
-        $this->session = $handler;
-        // Bind the cookie handler to a private variable.
-        $this->cookie = $cookie;
-    }
+    function __construct(array $config, Session $handler, Cookie $cookie);
   
     /**
      * Get all the translations of a language.
