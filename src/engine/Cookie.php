@@ -57,10 +57,17 @@ class Cookie implements CookieInterface
      * @param mixed  $value   The cookie value.
      * @param int    $expire  The cookie expiration time.
      *
+     * @throws RuntimeException If the headers are already sent.
+     *
      * @return void.
      */
-    public function set(array $options, string $name, string $value, $expire)
+    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire)
     {
+        // Check to see if the headers were sent.
+        if (\headers_sent())
+        {
+            throw new Exception\RuntimeException('The headers are already sent.');
+        }
         // Should we encrypt the cookie.
         if (isset($options['use_encrypt']) && $options['use_encrypt'] === \true)
         {
@@ -95,11 +102,18 @@ class Cookie implements CookieInterface
      * @param array  $options The list of options to run.
      * @param string $name    The name of the cookie.
      *
+     * @throws RuntimeException If the headers are already sent.
+     *
      * @return mixed The cookie value or if it does not exist
      *               Return a blank string.
      */
-    public function fetch(array $options, string $name): string
+    public function fetch(array $options = ['use_decrypt' => \true], string $name): string
     {
+        // Check to see if the headers were sent.
+        if (\headers_sent())
+        {
+            throw new Exception\RuntimeException('The headers are already sent.');
+        }
         // Check to see if the cookie exists.
         if (!isset($_COOKIE[$name]))
         {
@@ -121,10 +135,17 @@ class Cookie implements CookieInterface
      *
      * @param string $name The name of the cookie.
      *
+     * @throws RuntimeException If the headers are already sent.
+     *
      * @return void.
      */
     public function delete(string $name)
     {
+        // Check to see if the headers were sent.
+        if (\headers_sent())
+        {
+            throw new Exception\RuntimeException('The headers are already sent.');
+        }
         // Check to see if the cookie is set.
         if (isset($_COOKIE[$name]))
         {
