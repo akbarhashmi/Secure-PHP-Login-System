@@ -47,7 +47,8 @@
         "pimple/pimple": "^3",
         "psr/container": "*",
         "psr/log": "*",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-sodium": "*"
     },
     "autoload": {
         "psr-4": {
