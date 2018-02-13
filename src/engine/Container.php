@@ -61,7 +61,7 @@ class Container
      * 
      * @codeCoverageIgnore
      */
-    public static function clear()
+    public static function clear(): void
     {
         // Clear the container from the cache.
         self::$instance = \null;
