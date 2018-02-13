@@ -21,9 +21,9 @@ class SessionManager implements SessionManagerInterface
 {
     
     /**
-     * @var array $config The config array.
+     * @var array|[] $config The config array.
      */
-    private $config;
+    private $config = [];
     
     /**
      * Set the config array.
@@ -85,7 +85,7 @@ class SessionManager implements SessionManagerInterface
      * @return bool Return TRUE if the session id was regenerated and
      *              FALSE if it ws not.
      */
-    public static function regenerate($deleteOldSession = true)
+    public static function regenerate(bool $deleteOldSession = true): bool
     {
         return \session_regenerate_id($deleteOldSession);
     }
@@ -123,9 +123,9 @@ class SessionManager implements SessionManagerInterface
     /**
      * Destroy a session currently running.
      *
-     * @return void.
+     * @return bool Return TRUE if the session is destroyed
      */
-    public function destroySession()
+    public function destroySession(): bool
     {
         // Delete all the session variables.
         $_SESSION = [];
@@ -142,7 +142,7 @@ class SessionManager implements SessionManagerInterface
             $params["httponly"]
         );
         // Destroy the session.
-        \session_destroy();
+        return \session_destroy();
     }
     
 }
