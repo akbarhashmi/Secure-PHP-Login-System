@@ -14,8 +14,6 @@ namespace Akbarhashmi\Engine;
 
 /**
  * CookieInterface.
- *
- * @codeCoverageIgnore
  */
 interface CookieInterface
 {
@@ -37,9 +35,11 @@ interface CookieInterface
      * @param mixed  $value   The cookie value.
      * @param int    $expire  The cookie expiration time.
      *
+     * @throws RuntimeException If the headers are already sent.
+     *
      * @return void.
      */
-    public function set(array $options, string $name, string $value, $expire);
+    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire);
     
     /**
      * Fetch a cookie by name.
@@ -47,15 +47,19 @@ interface CookieInterface
      * @param array  $options The list of options to run.
      * @param string $name    The name of the cookie.
      *
+     * @throws RuntimeException If the headers are already sent.
+     *
      * @return mixed The cookie value or if it does not exist
      *               Return a blank string.
      */
-    public function fetch(array $options, string $name): string;
+    public function fetch(array $options = ['use_decrypt' => \true], string $name): string;
     
     /**
      * Delete a cookie by name.
      *
      * @param string $name The name of the cookie.
+     *
+     * @throws RuntimeException If the headers are already sent.
      *
      * @return void.
      */
