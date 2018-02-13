@@ -34,17 +34,6 @@ interface MySQLConnectInterface
      * @return void.
      */
     public function __construct(string $hostname = 'localhost', $port = 3306, string $database, string $username, string $password = '', bool $debug = \false);
-    
-    /**
-     * Formulate a dns string for the connection.
-     *
-     * @param string $hostname The database hostname.
-     * @param string $port     The database port.
-     * @param string $database The database name.
-     *
-     * @return string The dns string.
-     */
-    private function formulateDns(string $hostname, string $port, string $database);
 
     /**
      * Should we be running debug mode.
