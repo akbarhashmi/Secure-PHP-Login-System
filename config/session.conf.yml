@@ -1,6 +1,6 @@
 # session configuration
-name: akbarhashmi
+name: akbarhashmiSession
+auto_start: true
 use_cookies: true
 use_only_cookies: true
-auto_start: true
 use_strict_mode: true
