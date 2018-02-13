@@ -26,7 +26,7 @@ final class LangTest extends TestCase
         $container['config'] = [
             'session' => [
                 'name' => 'akbarhashmiSession',
-                'auto_start' => false,
+                'auto_start' => \false,
                 'use_cookies' => \true,
                 'use_only_cookies' => \true,
                 'use_strict_mode' => \true,
