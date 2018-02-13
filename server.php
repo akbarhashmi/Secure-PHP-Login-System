@@ -78,7 +78,7 @@ $container['session'] = $container->factory(function ($c)
 // Inject the language switcher.
 $container['lang'] = $container->factory(function ($c)
 {
-    return new Akbarhashmi\Engine\Session\Session(
+    return new Akbarhashmi\Engine\Lang(
         $c['config'],
         $c['session'],
         $c['cookie']
