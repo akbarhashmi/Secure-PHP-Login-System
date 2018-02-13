@@ -26,7 +26,7 @@ final class ContainerTest extends TestCase
     }
     public function testGetInstance()
     {
-        $instance = Container::getInstance();
+        $this->assertInstanceOf(PimpleContainer::class, Container::getInstance());
         $this->assertTrue(true);
     }
 }
