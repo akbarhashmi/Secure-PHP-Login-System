@@ -61,7 +61,7 @@ class Cookie implements CookieInterface
      *
      * @return void.
      */
-    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire)
+    public function set(array $options = ['use_encrypt' => \true], string $name, string $value, $expire): void
     {
         // Check to see if the headers were sent.
         if (\headers_sent())
@@ -139,7 +139,7 @@ class Cookie implements CookieInterface
      *
      * @return void.
      */
-    public function delete(string $name)
+    public function delete(string $name): void
     {
         // Check to see if the headers were sent.
         if (\headers_sent())
