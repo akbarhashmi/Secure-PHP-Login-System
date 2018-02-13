@@ -42,7 +42,7 @@ interface SessionManagerInterface
      * @return bool Return TRUE if the session id was regenerated and
      *              FALSE if it ws not.
      */
-    public static function regenerate($deleteOldSession = true);
+    public static function regenerate(bool $deleteOldSession = \true): bool;
     
     /**
      * Is the session running expired.
@@ -63,8 +63,8 @@ interface SessionManagerInterface
     /**
      * Destroy a session currently running.
      *
-     * @return void.
+     * @return bool Return TRUE if the session is destroyed
      */
-    public function destroySession();
+    public function destroySession(): bool;
     
 }
