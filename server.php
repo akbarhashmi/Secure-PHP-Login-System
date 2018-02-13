@@ -9,6 +9,8 @@ declare(strict_types=1);
  * @link    <https://github.com/akbarhashmi/Secure-PHP-Login-System> Github repository.
  * @license <https://github.com/akbarhashmi/Secure-PHP-Login-System/blob/master/LICENSE> MIT license.
  */
+
+// Define the system root.
 define('SYSTEM_ROOT', __DIR__);
 
 // Check composer.
@@ -17,6 +19,7 @@ if (!file_exists(SYSTEM_ROOT . '/vendor/autoload.php')) {
 }
 
 // Just in case require composer.
+// Use require once so composer does not get loaded twice.
 require_once SYSTEM_ROOT . '/vendor/autoload.php';
 
 // Load the Engine\App configuration.
