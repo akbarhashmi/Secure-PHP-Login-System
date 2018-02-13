@@ -11,8 +11,6 @@ declare(strict_types=1);
  */
  
 namespace Akbarhashmi\Engine;
-
-use Akbarhashmi\Engine\Session\Session;
  
 /**
  * LangInterface.
@@ -32,7 +30,7 @@ interface LangInterface
      *
      * @codeCoverageIgnore
      */
-    function __construct(array $config, Session $handler, Cookie $cookie);
+    function __construct(array $config, Session\Session $handler, Cookie $cookie);
   
     /**
      * Get all the translations of a language.
