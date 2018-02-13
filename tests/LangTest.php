@@ -37,7 +37,7 @@ final class LangTest extends TestCase
                 'domain' => '',
                 'secure' => '',
                 'http_only' => '',
-                'secret_key' => 'BPCyfPEAynzpsE2J'
+                'secret_key' => 'M2CXEz@bva<w-yCjF*SsP3e/w&fQ/6sz'
             ],
             'lang' => [
                 'default_language' => 'en',
